@@ -1,22 +1,16 @@
 import Vue from 'vue'
 import Vuex from "vuex"
+import blog from "./modules/blog"
 
 Vue.use(Vuex)
+
+const debug = process.env.NODE_ENV !== 'production'
+
 const store = new Vuex.Store({
-    state: {
-        token: ""
-    }, // data
-    mutations: { // methods
-        changeNetwork() {
-
-        }
+    modules: {
+        blog
     },
-    getters: {// computed
-
-    },
-    actions: {// async
-
-    }
-
+    strict: debug
 })
+
 export default store
