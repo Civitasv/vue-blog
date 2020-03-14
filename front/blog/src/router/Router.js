@@ -7,18 +7,21 @@ import Tags from "../views/common/Tags"
 import Search from "../views/common/Search"
 import Message from "../views/common/Message"
 import Link from "../views/common/Link"
+import Content from "../views/common/MyMarkdown"
 Vue.use(VueRouter)
 
 const routes = [
   { path: "/", name: "index", redirect: "/home" },
-  { path: "/home", name: "home", component: Home },
+  {
+    path: "/home", name: "home", component: Home
+  },
   { path: "/contact", name: "contact", component: Contact },
   { path: "/archives", name: "archives", component: Archives },
   { path: "/tags", name: "tags", component: Tags },
   { path: "/search", name: "search", component: Search },
   { path: "/message", name: "message", component: Message },
-  { path: "/link", name: "link", component: Link }
-
+  { path: "/link", name: "link", component: Link },
+  { path: "/articles/:id", name: "content", component: Content }
 ]
 
 const router = new VueRouter({

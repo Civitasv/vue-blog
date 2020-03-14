@@ -5,9 +5,12 @@ import axios from "../request" // 导入axios实例
 const article = {
     // 全部新闻
     getAllArticles() {
-        return axios.get(`${base.blog}/articles`);
+        return axios.get(`${base.blog}/articles/`);
+    },
+    // 根据ID获取
+    getArticleByID(articleID) {
+        return axios.get(`${base.blog}/articles/${articleID}`)
     }
-    // 其它...
 }
 
 export default article;

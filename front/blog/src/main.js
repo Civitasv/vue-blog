@@ -9,7 +9,10 @@ import 'view-design/dist/styles/iview.css'
 import echarts from "echarts"
 // 导入axios api
 import api from "./network/common/api"
-
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+// use
+Vue.use(mavonEditor)
 Vue.config.productionTip = false
 // 安装ViewUI
 Vue.use(ViewUI)
