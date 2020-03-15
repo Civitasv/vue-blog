@@ -11,6 +11,8 @@ import echarts from "echarts"
 import api from "./network/common/api"
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
+import animate from "animate.css"
+Vue.use(animate)
 // use
 Vue.use(mavonEditor)
 Vue.config.productionTip = false

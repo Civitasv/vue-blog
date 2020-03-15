@@ -1,47 +1,51 @@
 <template>
-  <div class="article">
-    <div class="wrap">
-      <Header></Header>
-      <div class="title">
-        <h2>{{article.title}}</h2>
-      </div>
-      <div class="descip">
-        <label>Posted on {{article.publicTime}}&nbsp;&nbsp;</label>
-        |
-        <Icon type="md-pricetags" />&nbsp;&nbsp;
-        <label
-          v-for="label in article.labels"
-          :key="label.labelID"
-        >{{label.label}}&nbsp;&nbsp;</label>
-        <label>| visitors:{{article.readNum}}&nbsp;&nbsp;</label>
-        <label>
+  <div>
+    <div id="article">
+      <div class="wrap">
+        <Header></Header>
+        <div class="title">
+          <h2>{{article.title}}</h2>
+        </div>
+        <div class="descip">
+          <label>Posted on {{article.publicTime}}&nbsp;&nbsp;</label>
           |
-          <Icon type="md-heart" />
-          {{article.commendNum}}&nbsp;&nbsp;
-        </label>
-        <label>
-          |
-          <Icon type="ios-bonfire" />
-          {{article.heat}}&nbsp;&nbsp;
-        </label>
+          <Icon type="md-pricetags" />&nbsp;&nbsp;
+          <label
+            v-for="label in article.labels"
+            :key="label.labelID"
+          >{{label.label}}&nbsp;&nbsp;</label>
+          <label>| visitors:{{article.readNum}}&nbsp;&nbsp;</label>
+          <label>
+            |
+            <Icon type="md-heart" />
+            {{article.commendNum}}&nbsp;&nbsp;
+          </label>
+          <label>
+            |
+            <Icon type="ios-bonfire" />
+            {{article.heat}}&nbsp;&nbsp;
+          </label>
+        </div>
+        <div class="markdown-body md">
+          <no-ssr>
+            <mavon-editor
+              class="md"
+              :value="article.content"
+              :boxShadow="true"
+              :subfield="prop.subfield"
+              :defaultOpen="prop.defaultOpen"
+              :toolbarsFlag="prop.toolbarsFlag"
+              :editable="prop.editable"
+              :scrollStyle="prop.scrollStyle"
+              :ishljs="prop.ishljs"
+            ></mavon-editor>
+          </no-ssr>
+        </div>
       </div>
-      <div class="markdown-body md">
-        <no-ssr>
-          <mavon-editor
-            class="md"
-            :value="article.content"
-            :boxShadow="true"
-            :subfield="prop.subfield"
-            :defaultOpen="prop.defaultOpen"
-            :toolbarsFlag="prop.toolbarsFlag"
-            :editable="prop.editable"
-            :scrollStyle="prop.scrollStyle"
-            :ishljs="prop.ishljs"
-          ></mavon-editor>
-        </no-ssr>
-      </div>
+      <Footer></Footer>
+      <GoTop></GoTop>
     </div>
-    <Footer></Footer>
+    <SideBar></SideBar>
   </div>
 </template>
 
@@ -50,11 +54,12 @@
   min-height: 100vh;
   padding-bottom: 100px;
 }
-.article {
+#article {
   background-image: url("../../assets/images/bg.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  transition: margin-right 1s;
 }
 .md {
   border: none;
@@ -80,6 +85,9 @@ import article from "../../network/common/api/article";
 import NoSSR from "vue-no-ssr";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import GoTop from "../../components/GoTop";
+import SideBar from "../../components/SideBar";
+
 export default {
   data() {
     return {
@@ -129,7 +137,9 @@ export default {
   components: {
     "no-ssr": NoSSR,
     Header,
-    Footer
+    Footer,
+    GoTop,
+    SideBar
   }
 };
 </script>
