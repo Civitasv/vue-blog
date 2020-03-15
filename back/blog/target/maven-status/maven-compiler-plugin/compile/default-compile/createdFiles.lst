@@ -1,8 +1,0 @@
-com\blog\application\mapper\ArticleMapper.class
-com\blog\application\controller\Hello.class
-com\blog\application\MyApplication.class
-com\blog\application\mapper\CommentMapper.class
-com\blog\application\mapper\LabelMapper.class
-com\blog\application\model\Article.class
-com\blog\application\model\Comment.class
-com\blog\application\model\Label.class
