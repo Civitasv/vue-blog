@@ -1,18 +1,23 @@
 <template>
-  <div id="app">
-    <div class="img1"></div>
-    <Header></Header>
-    <Articles></Articles>
+  <div id="home">
+    <div class="wrap">
+      <Header></Header>
+      <Articles></Articles>
+    </div>
     <Footer></Footer>
   </div>
 </template>
 
 <style>
-#app {
-  margin: 0;
-  padding: 0;
+#home {
   background-image: url("../../assets/images/bg.jpg");
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.wrap {
+  min-height: 100vh;
+  padding-bottom: 100px;
 }
 </style>
 
