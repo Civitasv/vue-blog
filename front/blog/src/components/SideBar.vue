@@ -53,6 +53,10 @@ export default {
         this.flag
           ? (document.getElementById("article").style.marginRight = "320px")
           : (document.getElementById("article").style.marginRight = 0);
+      } else if (this.$route.path == "/archives") {
+        this.flag
+          ? (document.getElementById("archives").style.marginRight = "320px")
+          : (document.getElementById("archives").style.marginRight = 0);
       }
     }
   }

@@ -12,6 +12,8 @@ import api from "./network/common/api"
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import animate from "animate.css"
+import "./assets/css/page.css";
+
 Vue.use(animate)
 // use
 Vue.use(mavonEditor)

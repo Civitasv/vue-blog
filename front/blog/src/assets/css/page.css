@@ -1,0 +1,24 @@
+.page {
+  text-align: center;
+  margin-top: 10vh;
+}
+.ivu-page-total{
+  color: white;
+}
+.ivu-page-prev,
+.ivu-page-next {
+  background: transparent;
+  border-radius:0;
+}
+.ivu-page-item {
+  border: none;
+  background-color: #ccc;
+  border-radius:0;
+}
+.ivu-page-item-active a {
+  color: white;
+}
+
+.ivu-timeline-item-head{
+  background-color: #493374;
+}

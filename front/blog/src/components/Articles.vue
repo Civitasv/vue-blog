@@ -3,7 +3,7 @@
     <main>
       <section>
         <!-- 题目--发表时间--标签--观看人数--点赞数--热度--摘要-->
-        <article v-for="article in articles" :key="article.articleID">
+        <article v-for="article in showArticles" :key="article.articleID">
           <div class="title">
             <h2>{{article.title}}</h2>
           </div>
@@ -38,6 +38,9 @@
         </article>
       </section>
     </main>
+    <div class="page">
+      <Page :total="articles.length" :page-size="pageSize" @on-change="changePage" show-total />
+    </div>
   </div>
 </template>
 
@@ -98,6 +101,7 @@ main {
 <script>
 import { mapState } from "vuex";
 import { mapActions } from "vuex";
+import { mapMutations } from "vuex";
 
 export default {
   data() {
@@ -106,11 +110,14 @@ export default {
   // state.模块名.属性名
   computed: {
     ...mapState({
-      articles: state => state.blog.articles
+      articles: state => state.blog.articles,
+      showArticles: state => state.blog.showArticles,
+      pageSize: state => state.blog.pageSize
     })
   },
   methods: {
-    ...mapActions("blog", ["getAllArticles"])
+    ...mapActions("blog", ["getAllArticles"]),
+    ...mapMutations("blog", ["changePage"])
     /*readMore(id) {
       this.setContent(id);
       this.$route.params.id;
