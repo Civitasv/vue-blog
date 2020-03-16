@@ -27,8 +27,8 @@ aside {
   height: 100%;
   width: 320px;
   z-index: 1;
-  box-shadow: inset 0 2px 6px #000;
-  background: #222;
+  box-shadow: inset 0 2px 6px #2f1f50;
+  background: #2f1f50;
   overflow-x: hidden;
   position: fixed;
 }

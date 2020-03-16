@@ -118,7 +118,7 @@ export default {
     }*/
   },
   mounted() {
-    this.getAllArticles();
+    if (this.articles.length == 0) this.getAllArticles();
   }
 };
 </script>
