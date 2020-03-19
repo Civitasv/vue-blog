@@ -10,6 +10,7 @@ import Content from "../views/common/Article"
 import Tag from "../views/common/Tag"
 import Admin from "../views/admin/Admin"
 import Login from "../views/admin/Login"
+import Write from "../views/admin/Write"
 
 Vue.use(VueRouter)
 
@@ -34,7 +35,9 @@ const routes = [
     meta: {
       requireAuth: true
     }
-  }
+  },
+  { path: "/write", name: "write", component: Write },
+
 ]
 
 const router = new VueRouter({

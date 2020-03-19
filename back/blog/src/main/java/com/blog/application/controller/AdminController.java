@@ -1,6 +1,7 @@
 package com.blog.application.controller;
 
 
+import com.blog.application.model.Article;
 import com.blog.application.model.User;
 import com.blog.application.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class AdminController {
     UserService userService;
 
     @PostMapping("/")
-    public int login(@RequestBody User requestUser){
+    public int login(@RequestBody User requestUser) {
         String username = requestUser.getUsername();
         User user = userService.get(username, requestUser.getPassword());
 
@@ -27,6 +28,11 @@ public class AdminController {
         } else {
             return 200;
         }
+    }
+
+    @PostMapping("/save")
+    public String save(@RequestBody Article artcile) {
+        return "";
     }
 
 }
