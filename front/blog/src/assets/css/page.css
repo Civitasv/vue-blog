@@ -1,3 +1,6 @@
+*{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 .page {
   text-align: center;
   margin-top: 10vh;
@@ -21,4 +24,25 @@
 
 .ivu-timeline-item-head{
   background-color: #493374;
+}
+
+.tag-cloud p{
+  cursor: pointer;
+}
+
+#searchContent{
+  border-radius: 0;
+}
+
+.serachbox .ivu-icon{
+  cursor: pointer;
+}
+
+#divider {
+  min-width: 20vw;
+  width: 20vw;
+  margin: 0 auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  background: #cf9dba54;
 }

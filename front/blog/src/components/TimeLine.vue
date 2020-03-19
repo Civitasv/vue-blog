@@ -55,14 +55,14 @@ export default {
   },
   computed: {
     ...mapState({
-      articles: state => state.blog.articles,
-      showArticles: state => state.blog.showArticles,
-      pageSize: state => state.blog.pageSize
+      articles: state => state.article.articles,
+      showArticles: state => state.article.showArticles,
+      pageSize: state => state.article.pageSize
     })
   },
   methods: {
-    ...mapActions("blog", ["getAllArticles"]),
-    ...mapMutations("blog", ["changePage"])
+    ...mapActions("article", ["getAllArticles"]),
+    ...mapMutations("article", ["changePage"])
   },
   mounted() {
     if (this.articles.length == 0) this.getAllArticles();

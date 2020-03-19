@@ -28,8 +28,8 @@ CREATE TABLE comment
     COMMENT_NUM  INT,
     COMMENT_NAME VARCHAR(45),
     EMAIL        VARCHAR(45),
-    ARTICLE_ID int,
-    foreign key (ARTICLE_ID) references article(ARTICLE_ID)
+    ARTICLE_ID   int,
+    foreign key (ARTICLE_ID) references article (ARTICLE_ID)
         on delete cascade # 级联更新 级联删除
         on UPDATE cascade
 );
@@ -43,7 +43,15 @@ CREATE TABLE article2label
     FOREIGN KEY (ARTICLE_ID) references article (ARTICLE_ID)
         on delete cascade
         on UPDATE cascade,
-    foreign key (LABEL_ID) references label(LABEL_ID)
+    foreign key (LABEL_ID) references label (LABEL_ID)
         on delete cascade
         on UPDATE cascade
 );
+
+CREATE TABLE `blog`.`account`
+(
+    `USER` VARCHAR(45) NOT NULL,
+    `PWD`  VARCHAR(45) NULL,
+    PRIMARY KEY (`USER`)
+);
+

@@ -11,12 +11,11 @@
             <label>Posted on {{article.publicTime}}&nbsp;&nbsp;</label>
             |
             <Icon type="md-pricetags" />&nbsp;&nbsp;
-            <label
-              v-for="label in article.labels"
-              :key="label.labelID"
-            >{{label.label}}&nbsp;&nbsp;</label>
+            <label v-for="label in article.labels" :key="label.labelID">
+              <router-link :to="'/tags/'+ label.labelID" tag="span" id="label">{{label.label}}</router-link>&nbsp;&nbsp;
+            </label>
             <label>| visitors:{{article.readNum}}&nbsp;&nbsp;</label>
-            <label>
+            <!--<label>
               |
               <Icon type="md-heart" />
               {{article.commendNum}}&nbsp;&nbsp;
@@ -25,7 +24,7 @@
               |
               <Icon type="ios-bonfire" />
               {{article.heat}}&nbsp;&nbsp;
-            </label>
+            </label>-->
           </div>
           <div class="digest">
             <p>{{article.digest}}</p>
@@ -50,6 +49,10 @@ main {
   margin: 0 auto;
   margin-top: 20vh;
   color: whitesmoke;
+}
+#label {
+  cursor: pointer;
+  border-bottom: 1px solid #fff;
 }
 
 .title {
@@ -88,14 +91,6 @@ main {
   background-color: whitesmoke;
   color: #493374;
 }
-#divider {
-  min-width: 20vw;
-  width: 20vw;
-  margin: 0 auto;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  background: #cf9dba54;
-}
 </style>
 
 <script>
@@ -110,14 +105,14 @@ export default {
   // state.模块名.属性名
   computed: {
     ...mapState({
-      articles: state => state.blog.articles,
-      showArticles: state => state.blog.showArticles,
-      pageSize: state => state.blog.pageSize
+      articles: state => state.article.articles,
+      showArticles: state => state.article.showArticles,
+      pageSize: state => state.article.pageSize
     })
   },
   methods: {
-    ...mapActions("blog", ["getAllArticles"]),
-    ...mapMutations("blog", ["changePage"])
+    ...mapActions("article", ["getAllArticles"]),
+    ...mapMutations("article", ["changePage"])
     /*readMore(id) {
       this.setContent(id);
       this.$route.params.id;

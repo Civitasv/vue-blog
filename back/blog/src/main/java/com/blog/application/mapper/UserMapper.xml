@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.application.mapper.UserMapper">
+    <resultMap type="User" id="UserMap">
+        <id property="username" column="USER"/>
+        <result property="password" column="PWD"/>
+    </resultMap>
+    <select id="get" resultMap="UserMap">
+        select * from account where USER=#{username} and PWD = #{password}
+    </select>
+</mapper>

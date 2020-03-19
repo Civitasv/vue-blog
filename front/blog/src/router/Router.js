@@ -1,30 +1,44 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from "../views/common/Home"
-import Contact from "../views/common/Contact"
 import Archives from "../views/common/Archives"
 import Tags from "../views/common/Tags"
 import Search from "../views/common/Search"
-import Message from "../views/common/Message"
+import About from "../views/common/About"
 import Link from "../views/common/Link"
-import Content from "../views/common/MyMarkdown"
+import Content from "../views/common/Article"
+import Tag from "../views/common/Tag"
+import Admin from "../views/admin/Admin"
+import Login from "../views/admin/Login"
+
 Vue.use(VueRouter)
 
 const routes = [
   { path: "/", name: "index", redirect: "/home" },
+  { path: "/articles", name: "articles", redirect: "/home" },
   {
     path: "/home", name: "home", component: Home
   },
-  { path: "/contact", name: "contact", component: Contact },
   { path: "/archives", name: "archives", component: Archives },
   { path: "/tags", name: "tags", component: Tags },
+  { path: "/tags/:id", name: "tag", component: Tag },
   { path: "/search", name: "search", component: Search },
-  { path: "/message", name: "message", component: Message },
+  { path: "/about", name: "about", component: About },
   { path: "/link", name: "link", component: Link },
-  { path: "/articles/:id", name: "content", component: Content }
+  { path: "/articles/:id", name: "content", component: Content },
+  { path: "/login", name: "login", component: Login },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Admin,
+    meta: {
+      requireAuth: true
+    }
+  }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

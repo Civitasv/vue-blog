@@ -9,6 +9,7 @@
         <typeAlias type="com.blog.application.model.Article" alias="Article"/>
         <typeAlias type="com.blog.application.model.Comment" alias="Comment"/>
         <typeAlias type="com.blog.application.model.Label" alias="Label"/>
+        <typeAlias type="com.blog.application.model.User" alias="User"/>
     </typeAliases>
     <!-- 配置mapper -->
     <mappers>

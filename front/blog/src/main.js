@@ -12,6 +12,7 @@ import api from "./network/common/api"
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import animate from "animate.css"
+import tagCloud from 'v-tag-cloud'
 import "./assets/css/page.css";
 
 Vue.use(animate)
@@ -20,10 +21,29 @@ Vue.use(mavonEditor)
 Vue.config.productionTip = false
 // 安装ViewUI
 Vue.use(ViewUI)
+// 词云
+Vue.use(tagCloud)
+
 // 全局作用域
 Vue.prototype.$echarts = echarts
 // 挂载api
 Vue.prototype.$api = api
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requireAuth) {
+    if (store.state.user.user.username) {
+      next()
+    } else {
+      next({
+        path: 'login',
+        query: { redirect: to.fullPath }
+      })
+    }
+  } else {
+    next()
+  }
+}
+)
 
 new Vue({
   store,

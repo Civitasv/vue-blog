@@ -1,6 +1,7 @@
 import com.blog.application.MyApplication;
 import com.blog.application.dao.ArticleDao;
 import com.blog.application.dao.LabelDao;
+import com.blog.application.dao.UserDao;
 import com.blog.application.dao.impl.ArticleDaoImpl;
 import com.blog.application.model.Article;
 import org.junit.Test;
@@ -23,6 +24,8 @@ public class TestJDBC {
     @Autowired
     private LabelDao labelDao;
 
+    @Autowired
+    private UserDao userDao;
     @Test
     public void test(){
         System.out.println(articleDao.getArticleByID(2));
@@ -30,6 +33,6 @@ public class TestJDBC {
 
     @Test
     public void test2(){
-        System.out.println(labelDao.getAllLabels());
+        System.out.println(userDao.get("husen","senmeng0921"));
     }
 }

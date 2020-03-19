@@ -4,14 +4,11 @@
       <div class="title">
         <router-link to="/home" tag="span">甜木木夕</router-link>
       </div>
-      <div class="subtitle">Life is short, I just coding</div>
+      <div class="subtitle">Be Someone</div>
     </div>
     <div class="nav">
       <router-link to="/home" tag="span">
         <Icon type="ios-home" />&nbsp;&nbsp;Home
-      </router-link>
-      <router-link to="/contact" tag="span">
-        <Icon type="ios-contact" />&nbsp;&nbsp;Contact
       </router-link>
       <router-link to="/archives" tag="span">
         <Icon type="ios-archive" />&nbsp;&nbsp;Archives
@@ -22,8 +19,8 @@
       <router-link to="/search" tag="span">
         <Icon type="md-search" />&nbsp;&nbsp;Search
       </router-link>
-      <router-link to="/message" tag="span">
-        <Icon type="ios-at" />&nbsp;&nbsp;Message
+      <router-link to="/about" tag="span">
+        <Icon type="ios-at" />&nbsp;&nbsp;About
       </router-link>
       <router-link to="/link" tag="span">
         <Icon type="ios-link" />&nbsp;&nbsp;Link
