@@ -23,6 +23,8 @@ public interface ArticleMapper {
     int deleteArticleByTD(int articleID);
 
     // 根据ID更新文章
-    int updateArticleByID(int articleID,Article article);
+    int updateArticleByID(Article article);
 
+    // 访问量++
+    int addReadNum();
 }

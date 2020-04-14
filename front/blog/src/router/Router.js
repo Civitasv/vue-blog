@@ -22,7 +22,7 @@ const routes = [
   },
   { path: "/archives", name: "archives", component: Archives },
   { path: "/tags", name: "tags", component: Tags },
-  { path: "/tags/:id", name: "tag", component: Tag },
+  { path: "/tags/:content", name: "tag", component: Tag },
   { path: "/search", name: "search", component: Search },
   { path: "/about", name: "about", component: About },
   { path: "/link", name: "link", component: Link },
@@ -36,12 +36,21 @@ const routes = [
       requireAuth: true
     }
   },
-  { path: "/write", name: "write", component: Write },
+  {
+    path: "/write", name: "write", component: Write, meta: {
+      requireAuth: true
+    }
+  },
+  {
+    path: "/write/:id", name: "update", component: Write, meta: {
+      requireAuth: true
+    }
+  }
 
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  //  mode: 'history',
   routes
 })
 

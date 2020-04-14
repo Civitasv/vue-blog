@@ -26,9 +26,9 @@ public class LabelController {
         return labelList;
     }
 
-    @GetMapping("/{labelID}")
-    public Label getLabelByID(@PathVariable int labelID){
-        Label label = labelService.getLabelByID(labelID);
+    @GetMapping("/{content}")
+    public Label getLabelByID(@PathVariable String content){
+        Label label = labelService.getLabelByContent(content);
         return label;
     }
 }

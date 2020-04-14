@@ -37,17 +37,17 @@
 }
 .wrap {
   min-height: 100vh;
-  padding-bottom: 100px;
+  padding-bottom: 10rem;
 }
 .tag-content {
-  width: 40vw;
+  width: 80vw;
   margin: 0 auto;
-  margin-top: 15vh;
+  margin-top: 25vh;
   color: whitesmoke;
 }
 
 #title {
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 #title,
@@ -71,6 +71,7 @@ import Footer from "../../components/Footer";
 import GoTop from "../../components/GoTop";
 import SideBar from "../../components/SideBar";
 import label from "../../network/common/api/label";
+import formatDate from "../../utils/timeStampUtil";
 
 export default {
   data() {
@@ -84,9 +85,14 @@ export default {
   },
   methods: {
     init() {
-      let labelID = this.$route.params.id;
-      label.getLabelByID(labelID).then(res => {
+      let content = this.$route.params.content;
+      label.getLabelByContent(content).then(res => {
         this.label.val = res.data.label;
+        for (var i = 0; i < res.data.articles.length; i++) {
+          res.data.articles[i].publicTime = formatDate(
+            res.data.articles[i].publicTime
+          );
+        }
         this.label.articles = res.data.articles;
       });
     }

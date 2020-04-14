@@ -19,7 +19,7 @@ public class LabelServiceImpl implements LabelService {
     }
 
     @Override
-    public Label getLabelByID(int labelID) {
-        return labelDao.getLabelByID(labelID);
+    public Label getLabelByContent(String content) {
+        return labelDao.getLabelByContent(content);
     }
 }

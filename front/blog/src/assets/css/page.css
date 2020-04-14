@@ -46,3 +46,7 @@
   margin-bottom: 24px;
   background: #cf9dba54;
 }
+
+.ivu-input{
+  border-radius: 0;
+}

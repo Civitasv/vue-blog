@@ -35,7 +35,6 @@ public class UploadController {
                 .append(request.getServerName())
                 .append(":")
                 .append(request.getServerPort())
-                .append(request.getContextPath())
                 .append("/blogImage/")
                 .append(filePath);
         String imgName = UUID.randomUUID().toString().replace("_", "") + "_" + image.getOriginalFilename().replaceAll(" ", "");
@@ -46,10 +45,21 @@ public class UploadController {
 
             JSONObject object = new JSONObject();
             object.put("url", url);
+            object.put("image", imgName);
 
             return object.toString();
         } catch (IOException e) {
             return "文件上传错误";
+        }
+    }
+
+    @DeleteMapping("/{image}")
+    public String deleteImage(@PathVariable String image){
+        File file = new File(baseFolderPath+"image");
+        if(file.delete()){
+            return (file.getName() + " 文件已被删除！");
+        }else{
+            return("文件删除失败！");
         }
     }
 }

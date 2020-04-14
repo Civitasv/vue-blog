@@ -7,8 +7,8 @@ const admin = {
     uploadImage(formdata) {
         return axios.post(`${base.blog}/upload/`, formdata);
     },
-    save(article) {
-        return axios.post(`${base.blog}/save/`, article);
+    deleteImage(image) {
+        return axios.delete(`${base.blog}/upload/${image}`);
     }
 }
 

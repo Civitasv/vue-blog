@@ -9,9 +9,6 @@ import java.util.List;
  */
 @Data
 public class Label {
-    // id
-    private int labelID;
-    // 1--java 2--c++
     // 值
     private String label;
     // Articles

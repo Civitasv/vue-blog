@@ -27,8 +27,14 @@ public class LabelDaoImpl implements LabelDao {
     }
 
     @Override
-    public Label getLabelByID(int labelID) {
+    public Label getLabelByContent(String content) {
         LabelMapper mapper = sqlSession.getMapper(LabelMapper.class);
-        return mapper.getLabelByID(labelID);
+        return mapper.getLabelByContent(content);
+    }
+
+    @Override
+    public int insertLabel(String label) {
+        LabelMapper mapper = sqlSession.getMapper(LabelMapper.class);
+        return mapper.insertLabel(label);
     }
 }

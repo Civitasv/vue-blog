@@ -1,14 +1,12 @@
 package com.blog.application.dao.impl;
 
 import com.blog.application.dao.ArticleDao;
+import com.blog.application.mapper.Article2LabelMapper;
 import com.blog.application.mapper.ArticleMapper;
 import com.blog.application.model.Article;
-import com.blog.application.model.Label;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Repository
@@ -47,8 +45,14 @@ public class ArticleDaoImpl implements ArticleDao {
     }
 
     @Override
-    public int updateArticleByID(int articleID, Article article) {
+    public int updateArticleByID( Article article) {
         ArticleMapper mapper = sqlSession.getMapper(ArticleMapper.class);
-        return mapper.updateArticleByID(articleID,article);
+        return mapper.updateArticleByID(article);
+    }
+
+    @Override
+    public int addReadNum() {
+        ArticleMapper mapper = sqlSession.getMapper(ArticleMapper.class);
+        return mapper.addReadNum();
     }
 }

@@ -1,0 +1,129 @@
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    html{
+        font-size: 14px;
+    }
+    .side-nav-toggle{
+        display: none;
+    }
+    aside{
+        width:320px;
+    }
+     .head{
+        padding-top: 15vh;
+    }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  html{
+        font-size: 13px;
+    }
+    .side-nav-toggle{
+        display: none;
+    }
+    aside{
+        width:320px;
+    }
+     .head{
+        padding-top: 15vh;
+    }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+     html{
+        font-size: 13px;
+    }
+  .side-nav-toggle{
+        display: none;
+    }
+    aside{
+        width:320px;
+    }
+     .head{
+        padding-top: 15vh;
+    }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+   html{
+        font-size: 12px;
+    }
+    .nav{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 5rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #ededed;
+        border-bottom: 1px solid #926ba2;
+        border-top: 1px solid #926ba2;
+    }
+    .nav span{
+        display: block;
+        text-align: left;
+        font-size:1.5rem;
+        color: black;
+    }
+    aside{
+        width:100%;
+    }
+     .head{
+        padding-top: 18vh;
+    }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+   html{
+        font-size: 10px;
+    }
+    .nav{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 5rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #ededed;
+        border-bottom: 1px solid #926ba2;
+        border-top: 1px solid #926ba2;
+    }
+    .nav span{
+        display: block;
+        text-align: left;
+        font-size:1.5rem;
+        color: black;
+    }
+    aside{
+        width:100%;
+    }
+    .head{
+        padding-top: 18vh;
+    }
+}

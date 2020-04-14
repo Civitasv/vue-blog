@@ -26,11 +26,11 @@
 }
 .wrap {
   min-height: 100vh;
-  padding-bottom: 100px;
+  padding-bottom: 10rem;
 }
 .links {
   text-align: center;
-  margin-top: 10vh;
+  margin-top: 25vh;
   color: whitesmoke;
 }
 

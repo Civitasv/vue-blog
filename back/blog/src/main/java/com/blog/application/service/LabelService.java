@@ -9,5 +9,5 @@ public interface LabelService {
     List<Label> getAllLabels();
 
     // 根据ID获得标签
-    Label getLabelByID(int labelID);
+    Label getLabelByContent(String content);
 }

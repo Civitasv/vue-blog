@@ -15,9 +15,13 @@ public interface ArticleDao {
     // 添加文章
     int insertArticle(Article article);
 
+
     // 根据ID删除文章
     int deleteArticleByTD(int articleID);
 
     // 根据ID更新文章
-    int updateArticleByID(int articleID,Article article);
+    int updateArticleByID(Article article);
+
+    // 访问量++
+    int addReadNum();
 }

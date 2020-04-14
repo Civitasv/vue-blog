@@ -49,7 +49,7 @@
 .serachbox {
   width: 50vw;
   margin: 0 auto;
-  margin-top: 10vh;
+  margin-top: 25vh;
 }
 .res {
   color: whitesmoke;

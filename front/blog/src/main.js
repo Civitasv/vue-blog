@@ -14,6 +14,7 @@ import 'mavon-editor/dist/css/index.css'
 import animate from "animate.css"
 import tagCloud from 'v-tag-cloud'
 import "./assets/css/page.css";
+import "./assets/css/app.css";
 
 Vue.use(animate)
 // use

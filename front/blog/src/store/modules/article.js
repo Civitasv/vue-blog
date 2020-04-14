@@ -1,4 +1,5 @@
 import article from "../../network/common/api/article"
+import formatDate from "../../utils/timeStampUtil";
 
 const state = {
     articles: [],
@@ -25,6 +26,9 @@ const actions = {
 // mutatios
 const mutations = {
     setArticles(state, articles) {
+        for (var i = 0; i < articles.length; i++) {
+            articles[i].publicTime = formatDate(articles[i].publicTime);
+        }
         state.articles = articles;
         if (state.articles.length < state.pageSize) {
             state.showArticles = state.articles;
@@ -33,7 +37,6 @@ const mutations = {
         }
     },
     changePage(state, index) {
-        console.log(index)
         var _start = (index - 1) * state.pageSize;
         var _end = index * state.pageSize;
         state.showArticles = state.articles.slice(_start, _end);

@@ -8,8 +8,8 @@ const label = {
         return axios.get(`${base.blog}/labels/`);
     },
     // 根据ID获取
-    getLabelByID(labelID) {
-        return axios.get(`${base.blog}/labels/${labelID}`)
+    getLabelByContent(content) {
+        return axios.get(`${base.blog}/labels/${content}`)
     }
 }
 

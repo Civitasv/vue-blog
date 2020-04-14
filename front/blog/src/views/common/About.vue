@@ -15,7 +15,11 @@
           <a href="https://github.com/civitasv">Github@Civitasv</a>
           <h2>关于本站</h2>
           <p>拥有一个个人博客在我看来是件非常酷的事情，因此我做了该blog</p>
-          <p>version:1.0</p>
+          <s style="color:red">
+            <p>version:1.0</p>
+          </s>
+          <h2>update @2020-03-28.</h2>
+          <p>添加域名，适配手机</p>
         </div>
       </div>
       <Footer></Footer>
@@ -38,12 +42,12 @@
   padding-bottom: 100px;
 }
 .content {
-  width: 50vw;
+  width: 80vw;
   border-radius: 0;
   margin: 0 auto;
   margin-top: 10vh;
   color: whitesmoke;
-  line-height: 3em;
+  line-height: 3rem;
 }
 .content a {
   color: whitesmoke;

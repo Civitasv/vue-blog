@@ -37,7 +37,7 @@
 
 <style scoped>
 .sidebar-toggle {
-  padding: 8px 12px;
+  padding: 0.8rem 1.2rem;
   position: fixed;
   bottom: 70px;
   right: 30px;
@@ -49,7 +49,6 @@ aside {
   top: 0;
   bottom: 0;
   height: 100%;
-  width: 320px;
   z-index: 1;
   background: #ededed;
   overflow-x: hidden;
@@ -58,11 +57,11 @@ aside {
 .side-inner {
   width: 100%;
   height: 100%;
-  padding-top: 20px;
+  padding-top: 2rem;
 }
 .head {
-  width: 100px;
-  height: 100px;
+  width: 10pc;
+  height: 10pc;
   background-image: url("../assets/images/head.png");
   background-size: cover;
   margin: 0 auto;
@@ -76,7 +75,7 @@ aside {
   border-left: none;
 }
 .site-state-item {
-  padding: 0 15px;
+  padding: 0 1.5rem;
   border-left: 1px solid #333;
 }
 .site-state-item-count,
@@ -89,17 +88,17 @@ aside {
   line-height: 1.4;
   white-space: nowrap;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 .site-state-item-count {
   display: block;
   text-align: center;
   color: inherit;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 .site-state-item-name {
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 </style>
 

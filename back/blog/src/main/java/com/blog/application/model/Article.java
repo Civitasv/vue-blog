@@ -12,7 +12,7 @@ public class Article {
     // id
     private int articleID;
     // 发布时间
-    private double publicTime;
+    private long publicTime;
     // 标题
     private String title;
     // 摘要

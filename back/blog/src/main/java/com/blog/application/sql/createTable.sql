@@ -1,5 +1,6 @@
 use blog;
 # article表
+
 create table article
 (
     ARTICLE_ID  int primary key auto_increment,
@@ -15,8 +16,7 @@ create table article
 # label表
 CREATE TABLE label
 (
-    LABEL_ID INT PRIMARY KEY AUTO_INCREMENT,
-    LABEL    VARCHAR(45)
+    LABEL  VARCHAR(45) PRIMARY KEY
 );
 
 # comment表，一个文章可以有多个评论，一对多
@@ -39,11 +39,11 @@ CREATE TABLE article2label
 (
     ID         INT PRIMARY KEY AUTO_INCREMENT,
     ARTICLE_ID INT,
-    LABEL_ID   INT,
+    LABEL   VARCHAR(45),
     FOREIGN KEY (ARTICLE_ID) references article (ARTICLE_ID)
         on delete cascade
         on UPDATE cascade,
-    foreign key (LABEL_ID) references label (LABEL_ID)
+    foreign key (LABEL) references label (LABEL)
         on delete cascade
         on UPDATE cascade
 );
@@ -54,4 +54,3 @@ CREATE TABLE `blog`.`account`
     `PWD`  VARCHAR(45) NULL,
     PRIMARY KEY (`USER`)
 );
-

@@ -19,14 +19,14 @@
 
 <style scoped>
 .timeline {
-  width: 40vw;
+  width: 80vw;
   margin: 0 auto;
-  margin-top: 15vh;
+  margin-top: 25vh;
   color: whitesmoke;
 }
 
 #title {
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 #title,

@@ -9,9 +9,13 @@
         <div class="descip">
           <label>Posted on {{article.publicTime}}&nbsp;&nbsp;</label>
           |
-          <Icon type="md-pricetags" />&nbsp;&nbsp;
-          <label v-for="label in article.labels" :key="label.labelID">
-            <router-link :to="'/tags/'+ label.labelID" tag="span" id="label">{{label.label}}</router-link>&nbsp;&nbsp;
+          <label v-for="(label,id) in article.labels" :key="id">
+            <Icon type="md-pricetags" />&nbsp;&nbsp;
+            <router-link
+              :to="'/tags/'+ label.label"
+              tag="span"
+              id="label"
+            >{{label.label}}&nbsp;&nbsp;</router-link>
           </label>
           <label>| visitors:{{article.readNum}}&nbsp;&nbsp;</label>
           <!--<label>
@@ -25,19 +29,18 @@
             {{article.heat}}&nbsp;&nbsp;
           </label>-->
         </div>
-        <div class="markdown-body md">
+        <div class="markdown-body md" :style="[styleObj]">
           <no-ssr>
             <mavon-editor
               class="md"
               :value="article.content"
-              boxShadow="true"
+              :boxShadow="true"
               :subfield="prop.subfield"
               :defaultOpen="prop.defaultOpen"
               :toolbarsFlag="prop.toolbarsFlag"
               :editable="prop.editable"
               :scrollStyle="prop.scrollStyle"
               :ishljs="prop.ishljs"
-              navigation="true"
             ></mavon-editor>
           </no-ssr>
         </div>
@@ -45,7 +48,6 @@
       <Footer></Footer>
       <GoTop></GoTop>
     </div>
-    <SideBar></SideBar>
   </div>
 </template>
 
@@ -70,7 +72,6 @@
 }
 .md {
   border: none;
-  width: 60vw;
   margin: 0 auto;
   margin-top: 5vh;
 }
@@ -78,13 +79,13 @@
   text-align: center;
   line-height: 4em;
   color: whitesmoke;
-  margin-top: 10vh;
+  margin-top: 20vh;
 }
 
 .descip {
   text-align: center;
   color: #f1e7e2;
-  font-size: 12px;
+  font-size: 1rem;
 }
 </style>
 <script>
@@ -93,7 +94,7 @@ import NoSSR from "vue-no-ssr";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import GoTop from "../../components/GoTop";
-import SideBar from "../../components/SideBar";
+import formatDate from "../../utils/timeStampUtil";
 
 export default {
   data() {
@@ -107,7 +108,8 @@ export default {
         readNum: "",
         labels: [],
         comments: []
-      }
+      },
+      styleObj: ""
     };
   },
   computed: {
@@ -124,11 +126,20 @@ export default {
     }
   },
   methods: {
+    created() {
+      if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+        //移动端
+        this.styleObj = { width: "100vw" };
+      } else {
+        this.styleObj = { width: "60vw" };
+      }
+      article.addReadNum();
+    },
     init() {
       let articleID = this.$route.params.id;
       article.getArticleByID(articleID).then(res => {
         this.article.content = res.data.content;
-        this.article.publicTime = res.data.publicTime;
+        this.article.publicTime = formatDate(res.data.publicTime);
         this.article.title = res.data.title;
         this.article.heat = res.data.heat;
         this.article.commendNum = res.data.commendNum;
@@ -140,13 +151,13 @@ export default {
   },
   mounted() {
     this.init();
+    this.created();
   },
   components: {
     "no-ssr": NoSSR,
     Header,
     Footer,
-    GoTop,
-    SideBar
+    GoTop
   }
 };
 </script>

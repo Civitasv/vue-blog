@@ -32,9 +32,7 @@ module.exports = {
     }
   },
 
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/vue-study/'
-    : '/'
+  publicPath: ""
   ,
   chainWebpack: config => {
     config.module.rule('md')

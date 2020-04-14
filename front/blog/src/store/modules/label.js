@@ -23,9 +23,9 @@ const actions = {
 // mutatios
 const mutations = {
     setLabels(state, labels) {
+        state.labels.splice(0, state.labels.length);
         for (var i = 0; i < labels.length; i++) {
             var obj = {
-                id: labels[i].labelID,
                 name: labels[i].label,
                 articles: labels[i].articles
             }

@@ -30,9 +30,4 @@ public class AdminController {
         }
     }
 
-    @PostMapping("/save")
-    public String save(@RequestBody Article artcile) {
-        return "";
-    }
-
 }

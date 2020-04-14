@@ -46,8 +46,8 @@ export default {
   methods: {
     ...mapActions("label", ["getAllLabels"]),
     clickTag(tag) {
-      let labelID = tag.id;
-      this.$router.push({ path: "/tags/" + labelID });
+      let content = tag.name;
+      this.$router.push({ path: "/tags/" + content });
     }
   },
   mounted() {
