@@ -2,11 +2,11 @@
 
 ### 一 简介
 
-**主页：**http://starss.me/
+**主页**：http://starss.me/
 
 **技术选型**：SpringBoot + Vue(Vue cli + Vuex ...) + MySQL
 
-**时间周期：**十天
+**时间周期**：十天
 
 前后端分离，其中前端部署在GitHub pages，后端部署在阿里云。
 
