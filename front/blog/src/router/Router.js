@@ -12,11 +12,6 @@ import Admin from "../views/admin/Admin"
 import Login from "../views/admin/Login"
 import Write from "../views/admin/Write"
 
-const originalPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(error => error)
-}
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -54,11 +49,18 @@ const routes = [
     path: "/write/:id", name: "update", component: Write, meta: {
       requireAuth: true
     }
+  },
+  {
+    path: '*',    // 此处需特别注意至于最底部
+    name: '404',
+    component: () => import('../views/common/404'),
+    meta: { title: '404 | Civitasv\'s blog' },
   }
 
 ]
 
 const router = new VueRouter({
+  mode: "history",
   routes
 })
 

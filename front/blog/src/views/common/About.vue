@@ -20,6 +20,9 @@
           </s>
           <h2>update @2020-03-28.</h2>
           <p>添加域名，适配手机</p>
+          <h2>update @2020-05-15.</h2>
+          <p>设置动态title</p>
+          <b>欢迎交换友链~</b>
         </div>
       </div>
       <Footer></Footer>

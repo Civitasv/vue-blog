@@ -48,8 +48,8 @@ router.beforeEach((to, from, next) => {
       label.getLabelInfoByContent(to.params.content).then(res => {
         document.title = res.data + " | Civitasv's blog"
       })
-    } {
-      document.title = to.meta.title || "木夕 blog"
+    } else {
+      document.title = to.meta.title || "Civitasv's blog"
     }
     next()
   }
