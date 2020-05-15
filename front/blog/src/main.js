@@ -7,14 +7,14 @@ import ViewUI from "view-design"
 // 引入css
 import 'view-design/dist/styles/iview.css'
 import echarts from "echarts"
-// 导入axios api
-import api from "./network/common/api"
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import animate from "animate.css"
 import tagCloud from 'v-tag-cloud'
 import "./assets/css/page.css";
 import "./assets/css/app.css";
+import article from "./network/common/api/article";
+import label from "./network/common/api/label";
 
 Vue.use(animate)
 // use
@@ -27,8 +27,6 @@ Vue.use(tagCloud)
 
 // 全局作用域
 Vue.prototype.$echarts = echarts
-// 挂载api
-Vue.prototype.$api = api
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
@@ -41,6 +39,18 @@ router.beforeEach((to, from, next) => {
       })
     }
   } else {
+    if (to.name === "content") {
+      article.getArticleInfoByID(to.params.id).then(res => {
+        document.title = res.data + " | Civitasv's blog"
+      })
+    } else if (to.name === "tag") {
+      console.log(to)
+      label.getLabelInfoByContent(to.params.content).then(res => {
+        document.title = res.data + " | Civitasv's blog"
+      })
+    } {
+      document.title = to.meta.title || "木夕 blog"
+    }
     next()
   }
 }

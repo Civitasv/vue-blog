@@ -12,34 +12,43 @@ import Admin from "../views/admin/Admin"
 import Login from "../views/admin/Login"
 import Write from "../views/admin/Write"
 
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(error => error)
+}
+
 Vue.use(VueRouter)
 
 const routes = [
-  { path: "/", name: "index", redirect: "/home" },
+  {
+    path: "/", name: "index", redirect: "/home"
+  },
   { path: "/articles", name: "articles", redirect: "/home" },
   {
-    path: "/home", name: "home", component: Home
+    path: "/home", name: "home", component: Home, meta: { title: 'Civitasv\'s blog' }
   },
-  { path: "/archives", name: "archives", component: Archives },
-  { path: "/tags", name: "tags", component: Tags },
+  { path: "/archives", name: "archives", component: Archives, meta: { title: 'Archives | Civitasv\'s blog' } },
+  { path: "/tags", name: "tags", component: Tags, meta: { title: 'Tags | Civitasv\'s blog' } },
   { path: "/tags/:content", name: "tag", component: Tag },
-  { path: "/search", name: "search", component: Search },
-  { path: "/about", name: "about", component: About },
-  { path: "/link", name: "link", component: Link },
+  { path: "/search", name: "search", component: Search, meta: { title: 'Search | Civitasv\'s blog' } },
+  { path: "/about", name: "about", component: About, meta: { title: 'About | Civitasv\'s blog' } },
+  { path: "/link", name: "link", component: Link, meta: { title: 'Link | Civitasv\'s blog' } },
   { path: "/articles/:id", name: "content", component: Content },
-  { path: "/login", name: "login", component: Login },
+  { path: "/login", name: "login", component: Login, meta: { title: 'Login | Civitasv\'s blog' } },
   {
     path: '/admin',
     name: 'admin',
     component: Admin,
     meta: {
+      title: 'Admin | Civitasv\'s blog',
       requireAuth: true
     }
   },
   {
     path: "/write", name: "write", component: Write, meta: {
+      title: 'Write | Civitasv\'s blog',
       requireAuth: true
-    }
+    },
   },
   {
     path: "/write/:id", name: "update", component: Write, meta: {
@@ -50,7 +59,6 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  //  mode: 'history',
   routes
 })
 

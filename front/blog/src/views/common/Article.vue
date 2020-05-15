@@ -91,9 +91,11 @@
 <script>
 import article from "../../network/common/api/article";
 import NoSSR from "vue-no-ssr";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import GoTop from "../../components/GoTop";
+
+const Header = () => import("../../components/Header");
+const Footer = () => import("../../components/Footer");
+const GoTop = () => import("../../components/GoTop");
+
 import formatDate from "../../utils/timeStampUtil";
 
 export default {
@@ -125,6 +127,7 @@ export default {
       return data;
     }
   },
+  created() {},
   methods: {
     created() {
       if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {

@@ -31,4 +31,10 @@ public class LabelController {
         Label label = labelService.getLabelByContent(content);
         return label;
     }
+
+    @GetMapping("/info/{content}")
+    public String getLabelInfoByID(@PathVariable String content){
+        Label label = labelService.getLabelByContent(content);
+        return label.getLabel();
+    }
 }

@@ -10,6 +10,9 @@ const article = {
     getArticleByID(articleID) {
         return axios.get(`${base.blog}/articles/${articleID}`)
     },
+    getArticleInfoByID(articleID) {
+        return axios.get(`${base.blog}/articles/info/${articleID}`)
+    },
     saveArticle(article, labels) {
         return axios.post(
             `${base.blog}/articles/`,

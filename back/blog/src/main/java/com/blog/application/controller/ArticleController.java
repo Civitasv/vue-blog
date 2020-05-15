@@ -32,6 +32,12 @@ public class ArticleController {
         return article;
     }
 
+    @GetMapping("/info/{articleID}")
+    public String getArticleInfoByID(@PathVariable int articleID) {
+        Article article = articleService.getArticleByID(articleID);
+        return article.getTitle();
+    }
+
     @PostMapping("/")
     public int saveArticle(@RequestBody String data) {
         JSONObject jsonObject = new JSONObject(data);

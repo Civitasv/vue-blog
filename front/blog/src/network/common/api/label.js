@@ -10,6 +10,10 @@ const label = {
     // 根据ID获取
     getLabelByContent(content) {
         return axios.get(`${base.blog}/labels/${content}`)
+    },
+    // 根据ID获取
+    getLabelInfoByContent(content) {
+        return axios.get(`${base.blog}/labels/info/${content}`)
     }
 }
 

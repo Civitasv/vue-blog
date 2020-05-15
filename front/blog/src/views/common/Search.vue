@@ -72,10 +72,10 @@
 }
 </style>
 <script>
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import GoTop from "../../components/GoTop";
-import SideBar from "../../components/SideBar";
+const Header = () => import("../../components/Header");
+const Footer = () => import("../../components/Footer");
+const GoTop = () => import("../../components/GoTop");
+const SideBar = () => import("../../components/SideBar");
 import { mapState } from "vuex";
 import { mapActions } from "vuex";
 export default {

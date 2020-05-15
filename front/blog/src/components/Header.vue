@@ -2,7 +2,7 @@
   <header>
     <div class="head">
       <div class="title">
-        <router-link to="/home" tag="span" class="brand">甜木木夕</router-link>
+        <router-link to="/home" tag="span" class="brand">Civitasv's blog</router-link>
       </div>
       <div class="subtitle">Be Someone</div>
     </div>
@@ -33,7 +33,8 @@
 </style>
 
 <script>
-import Nav from "../components/Nav";
+const Nav = () => import("../components/Nav");
+
 export default {
   components: {
     Nav
