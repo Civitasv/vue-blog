@@ -26,5 +26,5 @@ public interface ArticleMapper {
     int updateArticleByID(Article article);
 
     // 访问量++
-    int addReadNum();
+    int addReadNum(int articleID);
 }

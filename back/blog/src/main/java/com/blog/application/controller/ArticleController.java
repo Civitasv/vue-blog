@@ -69,8 +69,8 @@ public class ArticleController {
         return articleService.updateArticleByID(article);
     }
 
-    @PutMapping("/read")
-    public int addReadNum(){
-        return articleService.addReadNum();
+    @PutMapping("/read/{articleID}")
+    public int addReadNum(@PathVariable int articleID){
+        return articleService.addReadNum(articleID);
     }
 }

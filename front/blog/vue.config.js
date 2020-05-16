@@ -32,8 +32,7 @@ module.exports = {
     }
   },
 
-  publicPath: "./",
-  assetsDir: "./",
+  publicPath: "/",
   chainWebpack: config => {
     config.module.rule('md')
       .test(/\.md/)

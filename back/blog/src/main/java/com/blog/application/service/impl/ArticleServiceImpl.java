@@ -62,7 +62,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public int addReadNum() {
-        return articleDao.addReadNum();
+    public int addReadNum(int articleID) {
+        return articleDao.addReadNum(articleID);
     }
 }

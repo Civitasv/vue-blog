@@ -51,8 +51,8 @@ public class ArticleDaoImpl implements ArticleDao {
     }
 
     @Override
-    public int addReadNum() {
+    public int addReadNum(int articleID) {
         ArticleMapper mapper = sqlSession.getMapper(ArticleMapper.class);
-        return mapper.addReadNum();
+        return mapper.addReadNum(articleID);
     }
 }

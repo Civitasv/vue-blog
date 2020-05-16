@@ -63,7 +63,7 @@
     </insert>
 
     <update id="addReadNum">
-        update article set READ_NUM = READ_NUM+1
+        update article set READ_NUM = READ_NUM+1 where ARTICLE_ID=#{articleID}
     </update>
 
 </mapper>
