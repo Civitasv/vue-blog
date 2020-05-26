@@ -1,7 +1,7 @@
 <template>
   <div class="timeline">
     <Timeline>
-      <TimelineItem color="#493374">Nice! {{articles.length}} posts in total. Keep on posting.</TimelineItem>
+      <TimelineItem color="white">Nice! {{articles.length}} posts in total. Keep on posting.</TimelineItem>
       <TimelineItem v-for="article in showArticles" :key="article.articleID" :color="color">
         <router-link :to="'/articles/'+ article.articleID" tag="div">
           <div class="line">

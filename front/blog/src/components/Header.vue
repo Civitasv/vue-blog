@@ -12,8 +12,8 @@
 
 <style scoped>
 .brand {
-  background: #493374;
-  color: white;
+  background: #f9f9f9;
+  color: #396882;
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;

@@ -43,6 +43,7 @@
               :ishljs="prop.ishljs"
             ></mavon-editor>
           </no-ssr>
+          <Comment></Comment>
         </div>
       </div>
       <Footer></Footer>
@@ -59,6 +60,7 @@
 #label:hover {
   color: white;
 }
+
 .wrap {
   min-height: 100vh;
   padding-bottom: 100px;
@@ -74,6 +76,7 @@
   border: none;
   margin: 0 auto;
   margin-top: 5vh;
+  margin-bottom: 15vh;
 }
 .title {
   text-align: center;
@@ -95,6 +98,7 @@ import NoSSR from "vue-no-ssr";
 const Header = () => import("../../components/Header");
 const Footer = () => import("../../components/Footer");
 const GoTop = () => import("../../components/GoTop");
+const Comment = () => import("../../components/Comment");
 
 import formatDate from "../../utils/timeStampUtil";
 
@@ -127,7 +131,6 @@ export default {
       return data;
     }
   },
-  created() {},
   methods: {
     created() {
       if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
@@ -136,10 +139,11 @@ export default {
       } else {
         this.styleObj = { width: "60vw" };
       }
-      article.addReadNum();
     },
     init() {
       let articleID = this.$route.params.id;
+      console.log(articleID);
+      article.addReadNum(articleID);
       article.getArticleByID(articleID).then(res => {
         this.article.content = res.data.content;
         this.article.publicTime = formatDate(res.data.publicTime);
@@ -160,7 +164,8 @@ export default {
     "no-ssr": NoSSR,
     Header,
     Footer,
-    GoTop
+    GoTop,
+    Comment
   }
 };
 </script>

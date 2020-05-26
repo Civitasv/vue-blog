@@ -83,10 +83,11 @@
 }
 
 .readmore button {
-  background-color: #493374;
-  color: white;
+  background-color: whitesmoke;
+  color: #396882;
   font-size: 1.1rem;
-  border: 0.3rem solid #493374;
+  font-weight: bold;
+  border: 0.3rem solid whitesmoke;
   padding: 0.5rem 1rem 0.5rem 1rem;
   transition-property: background-color;
   transition-duration: 0.2s;
@@ -96,8 +97,8 @@
 }
 
 .readmore button:hover {
-  background-color: whitesmoke;
-  color: #493374;
+  background-color: #396882;
+  color: whitesmoke;
 }
 </style>
 

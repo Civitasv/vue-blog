@@ -3,10 +3,12 @@ import App from './App.vue'
 import router from './router/Router.js'
 import store from "./store/index.js"
 // 引入view-design
-import ViewUI from "view-design"
+// import ViewUI from "view-design"
+import ViewUI from "./assets/ViewUI"
+
 // 引入css
 import 'view-design/dist/styles/iview.css'
-import echarts from "echarts"
+// import echarts from "echarts"
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import animate from "animate.css"
@@ -21,12 +23,13 @@ Vue.use(animate)
 Vue.use(mavonEditor)
 Vue.config.productionTip = false
 // 安装ViewUI
+// Vue.use(ViewUI)
 Vue.use(ViewUI)
 // 词云
 Vue.use(tagCloud)
 
 // 全局作用域
-Vue.prototype.$echarts = echarts
+// Vue.prototype.$echarts = echarts
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {

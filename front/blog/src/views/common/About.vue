@@ -15,13 +15,13 @@
           <a href="https://github.com/civitasv">Github@Civitasv</a>
           <h2>关于本站</h2>
           <p>拥有一个个人博客在我看来是件非常酷的事情，因此我做了该blog</p>
-          <s style="color:red">
-            <p>version:1.0</p>
-          </s>
+
           <h2>update @2020-03-28.</h2>
           <p>添加域名，适配手机</p>
           <h2>update @2020-05-15.</h2>
           <p>设置动态title，改变为history模式</p>
+          <h2>update @2020-05-24.</h2>
+          <p>添加评论功能</p>
           <b>欢迎交换友链~</b>
         </div>
       </div>

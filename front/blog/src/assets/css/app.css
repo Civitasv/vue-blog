@@ -2,7 +2,13 @@
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
 */
+.v-note-panel{
+    border:none !important;
+}
 
+.v-show-content{
+    background-color: whitesmoke !important ;
+}
 @media (min-width: 1281px) {
     html{
         font-size: 14px;

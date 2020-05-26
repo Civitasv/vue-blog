@@ -5,9 +5,9 @@
         <Header></Header>
         <div class="tag-content">
           <Timeline>
-            <TimelineItem color="#493374">
+            <TimelineItem color="white">
               {{label.val}}
-              <label style="color:gray">Tag</label>
+              <label style="color:whitesmoke">Tag</label>
             </TimelineItem>
             <TimelineItem v-for="article in label.articles" :key="article.articleID" :color="color">
               <router-link :to="'/articles/'+ article.articleID" tag="div">

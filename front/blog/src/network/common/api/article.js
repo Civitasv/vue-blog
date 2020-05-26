@@ -24,8 +24,8 @@ const article = {
     updateArticle(article) {
         return axios.put(`${base.blog}/articles/`, article);
     },
-    addReadNum() {
-        return axios.put(`${base.blog}/articles/read`);
+    addReadNum(articleID) {
+        return axios.put(`${base.blog}/articles/read/${articleID}`);
     }
 }
 

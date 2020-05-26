@@ -32,7 +32,6 @@ const Header = () => import("../../components/Header");
 const Footer = () => import("../../components/Footer");
 const GoTop = () => import("../../components/GoTop");
 const SideBar = () => import("../../components/SideBar");
-
 export default {
   data() {
     return {};
