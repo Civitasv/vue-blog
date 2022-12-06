@@ -17,7 +17,7 @@
     "mavon-editor": "^2.7.7",
     "minimist": ">=1.2.2",
     "prerender-spa-plugin": "^3.4.0",
-    "qs": "^6.9.1",
+    "qs": "^6.9.7",
     "text-loader": "0.0.1",
     "v-tag-cloud": "^1.0.3",
     "view-design": "^4.1.3",
